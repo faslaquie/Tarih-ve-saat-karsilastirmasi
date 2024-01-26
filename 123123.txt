@@ -1,0 +1,50 @@
+var
+BIRINCI_TARIH, IKINCI_TARIH, UCUNCU_TARIH, DORDUNCU_TARIH  :TDateTime;
+SONUC :Integer;
+begin
+Memo1.Lines.Clear;
+Memo1.Lines.Add('# TARİH KARŞILAŞTIRMA # ');
+ BIRINCI_TARIH := StrToDateTime('1.1.2021 12:30:00');
+Memo1.Lines.Add('1. tarih ve saat : ' + DateTimeToStr(BIRINCI_TARIH));
+
+  IKINCI_TARIH := StrToDateTime('1.1.2021 13:00:00');
+Memo1.Lines.Add('2. tarih ve saat : ' + DateTimeToStr(IKINCI_TARIH));
+
+SONUC := CompareDate(BIRINCI_TARIH, IKINCI_TARIH);
+
+Memo1.Lines.Add('1 --> 2. karşılaştırma sonucu : ' + IntToStr(SONUC));
+Memo1.Lines.Add('');
+Memo1.Lines.Add('# TARİH KARŞILAŞTIRMA # ');
+
+Memo1.Lines.Add('1. tarih ve saat : ' + DateTimeToStr(BIRINCI_TARIH));
+
+ UCUNCU_TARIH := StrToDateTime('1.1.2021 12:30:01');
+Memo1.Lines.Add('3. tarih ve saat : ' + DateTimeToStr(UCUNCU_TARIH));
+
+SONUC := CompareDateTime(BIRINCI_TARIH, UCUNCU_TARIH);
+
+Memo1.Lines.Add('1 --> 3. karşılaştırma sonucu : ' + IntToStr(SONUC));
+
+Memo1.Lines.Add('');
+Memo1.Lines.Add('# SAAT KARŞILAŞTIRMA # ');
+
+ DORDUNCU_TARIH := StrToDateTime('1.1.2022 10:30:00');
+
+Memo1.Lines.Add('1. tarih ve saat : ' + DateTimeToStr(BIRINCI_TARIH));
+Memo1.Lines.Add('4. tarih ve saat : ' + DateTimeToStr(DORDUNCU_TARIH));
+
+SONUC := CompareDateTime(BIRINCI_TARIH, DORDUNCU_TARIH);
+
+Memo1.Lines.Add('1 --> 4. karşılaştırma sonucu : ' + IntToStr(SONUC));
+
+Memo1.Lines.Add('');
+
+Memo1.Lines.Add('------------------------------------------------');
+
+Memo1.Lines.Add('Sonuç 1 ise; ilk değer ikinci değerden büyük,');
+
+Memo1.Lines.Add('Sonuç 0 ise; iki değer birbirine eşit,');
+
+Memo1.Lines.Add('Sonuç -1 ise; ilk değer ikinci değerden küçüktür,');
+
+end;
