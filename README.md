@@ -1,1 +1,1 @@
-
+# Tarih ve saat karşılaştırması.
